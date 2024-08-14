@@ -75,7 +75,13 @@ h3 {
 @media (max-width: 991px) {
   .col-lg-5, #imagen, .div-forms {
     border-radius: 7%;
+    #imagen {
+      display: none;
+     }
   }
+  #imagenPreguntas{
+    display:none;
+   }
 }
 
 
@@ -85,6 +91,9 @@ h3 {
    }
    #imagen {
     display: none;
+   }
+   #imagenPreguntas{
+    display:none;
    }
 
 }

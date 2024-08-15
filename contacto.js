@@ -23,7 +23,7 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     nombreError.textContent = '';
     apellidoError.textContent = '';
     emailError.textContent = '';
-    teléfonoError.numberContent = '';
+    teléfonoError.textContent = '';
     asuntoError.textContent = '';
     mensajeError.textContent = '';
 
@@ -36,9 +36,9 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
         isValid = false;
     }
 
-    // Validar el nombre
+    // Validar el apellido
     if (apellido.trim() === '') {
-        apellidoError.textContent = 'El nombre es requerido.';
+        apellidoError.textContent = 'El apellido es requerido.';
         isValid = false;
 }
 
@@ -49,8 +49,8 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     }
 
     // Validar el teléfono
-    if (teléfono.length < 8) {
-        teléfonoError.numberContent = 'El teléfono debe tener al menos 8 dígitos.';
+    if (isNaN(teléfono) | teléfono.length < 8) {
+        teléfonoError.textContentContent = 'El teléfono debe tener al menos 8 dígitos.';
         isValid = false;
     }
 
@@ -60,9 +60,9 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
         isValid = false;
     }
 
-    // Validar el Asunto
-    if (asunto.length < 10) {
-        asuntoError.textContent = 'El mensaje debe ser más largo';
+    // Validar el mensaje
+    if (mensaje.length < 10) {
+        mensaje.Error.textContent = 'El mensaje debe ser más largo';
         isValid = false;
     }
 
@@ -70,13 +70,7 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
     if (isValid) {
         alert('Formulario enviado correctamente.');
 
-        /*const formularioContacto=document.querySelector("#formularioContacto")
-        formularioContacto.addEventListener('submit', handlesubmit)
-    
-        function handlesubmit(event) {
-            event.preventDefault()
-            const formularioContacto = new FormData(this)
-        } */
+
     
         // Aquí puedes realizar el envío del formulario si es necesario
         // Por ejemplo, usando fetch() o XMLHttpRequest para enviar los datos a un servidor
